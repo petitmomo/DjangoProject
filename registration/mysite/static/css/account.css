@@ -1,0 +1,54 @@
+.radio-row {
+    text-align: center;
+}
+input[type="radio"] {
+    width: 45px;
+    height: 17px;
+}
+label.custom-control-label {
+    font-family: auto;
+    color: black;
+}
+.button.btn.btn-warning.submit.button{
+    background-color: #f39c12;
+    border-color: #e08e0b;
+    width: 63% !important;
+    margin-left: 21% !important;
+}
+.pendingLoginBtn {
+    width: 63% !important;
+    margin-right: 16% !important;
+}
+.color1 {
+    text-align: center;
+    color: #009688;
+    padding-top: 7em;
+    font-weight: 800;
+    margin-left: 58px;
+    width: -webkit-fill-available;
+}
+.panel.panel-login {
+    border-radius: 10px;
+    height: 50rem;
+    width: 90%;
+}
+
+.panel-heading {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+}
+.col-md-6.col-md-offset-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: inherit;
+}
+.panel-body.blog {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+input#password2 {
+    width: 51%;
+    margin-left: 29%;
+    border-radius: 8px;
+    border-color: black;
+    color: black;
+}
