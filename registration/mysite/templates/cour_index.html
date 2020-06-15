@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="container">
+    <div class="blog">
+        <div class="col-md-12">
+            <div class="row">
+                {% for cour in blog_entries %}
+                <div class="col-md-6 ">
+                    <div class="card mb-4">
+                        <a href="{% url 'cour-detail' cour.pk %}">
+                            <img src="{{ cour.image.url }}" alt="img" class="courIcon">
+                            <div class="card-body">
+                                <h1 class="card-title">{{ cour.title }}</h1>
+                                <p class="card-text">{{cour.slug }}</p>
+                            </div>
+                        </a>
+                        <div class="bouton">
+                            <a href="{% url 'cour-detail' cour.pk %}"> More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+     </div>
+</div>
+{%endblock%}
