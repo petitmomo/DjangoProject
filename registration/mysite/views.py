@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.views.generic import ListView, DetailView
+from .models import Cour 
 
 
 def index(request):
@@ -49,7 +51,7 @@ def login(request):
 
         if add is not None:
             auth.login(request, add)
-            return redirect('home')
+            return redirect('cour-index')
         else:
             messages.info(request, 'Identifiant invalide')
             return redirect('login')
@@ -57,9 +59,17 @@ def login(request):
     return render(request, 'login.html')
 
 
-def home(request):
-    return render(request, 'home.html')
-
-
 def password_reset(request):
     return render(request, 'password_reset.html')
+
+class CourList(ListView):
+    model = Cour
+    template_name = 'cour_index.html'
+    context_object_name = 'blog_entries'
+
+class CourDetail(DetailView):
+    model = Cour
+    template_name = 'cour_detail.html'
+
+   
+
