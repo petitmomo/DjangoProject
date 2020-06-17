@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+ {% block content %}
+<style>
+label{
+    display: block;
+    float: left;
+    width: 400px;
+}
+.input-group{
+    margin-top: 40px;
+}
+.blog{
+    margin-top: 40px;
+}
+h1{
+    color: #3a464b;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn-secondary{
+    background-color: orange;
+}
+
+</style>
+<div class="container">
+   <div class="row blog">
+       <div class="col-md-12">
+           <h1>Modifier le cour</h1>
+           <form method="POST">
+                {% csrf_token %}
+                
+                    <div class=" input-group">
+                        <label>Titre</label>
+                        <input type="text" name="title">
+                    </div>
+                    <div class=" input-group">
+                        <label>Description</label>
+                        <textarea name="slug" rows="8" cols="60"></textarea> 
+                    </div>
+                    <div class=" input-group">
+                        <label>Image</label>
+                        <input type="file" name="image">
+                    </div>
+                    <div class=" input-group">
+                        <label>Contenu</label>
+                        <textarea name="content" rows="10" cols="60"></textarea> 
+                    </div>
+                    <button class="btn btn-secondary">Modifier</button>
+                    
+           </form>
+           
+       </div>
+   </div>
+</div>
+{% endblock content %}
