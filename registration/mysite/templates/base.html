@@ -1,7 +1,7 @@
 <html>
     <head>
         {% load static %}
-        <title>Sololearn</title>
+        <title>Bakeli</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
         <meta name="google" content="notranslate" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,7 +30,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'cour-index' %}">SOLOLEARN</a>
+                <a class="navbar-brand" href="{% url 'cour-index' %}"><img src="{% static 'logo.png' %}"></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,6 +42,9 @@
                         </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'logout' %}">Déconnexion</a>
                         </li>
                     </ul>
                 </div>
