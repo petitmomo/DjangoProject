@@ -4,6 +4,9 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from .models import Cour 
+from django.views.generic import UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 
 
 def index(request):
@@ -58,6 +61,10 @@ def login(request):
 
     return render(request, 'login.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
+
 
 def password_reset(request):
     return render(request, 'password_reset.html')
@@ -70,6 +77,18 @@ class CourList(ListView):
 class CourDetail(DetailView):
     model = Cour
     template_name = 'cour_detail.html'
+
+class CourUpdate(UpdateView):
+    model = Cour
+    template_name = 'cour_edit.html'
+    fields = ['title', 'slug', 'image', 'content']
+
+class CourDelete(DeleteView):
+    model = Cour
+    template_name = 'cour_delete.html'
+    success_url = reverse_lazy('cour-index')
+    
+
 
    
 
