@@ -38,25 +38,8 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 20px;
   }
   
-.bouton a {
-background-color: #1abc9c;
-border: medium none;
-border-radius: 20px;
-color: #fff;
-display: inline-block;
-padding: 10px;
-text-decoration: none;
-width: 90px;
-text-align: center;
-font-size: 1em;
-}
-.bouton {
-overflow: hidden;
-margin-top: 10px;
-text-align: right;
-margin-right: 10px;
-padding-right: 10px;
-}
+
+
 .card a img{border:none;}
 .card a img.courIcon{
 float: left;
@@ -68,45 +51,10 @@ margin-right: 35px;
 margin-left: 20px;
 margin-top: 20px;
 }
-.bouton1{
-overflow: hidden;
-margin-top: 10px;
-text-align: right;
-margin-right: 10px;
-padding-right: 10px;
-}
-.bouton1 a{
-background-color: orange;
-border: medium none;
-border-radius: 20px;
-color: #fff;
-display: inline-block;
-padding: 10px;
-text-decoration: none;
-width: 90px;
-text-align: center;
-font-size: 1em;
-}
 
 
-.bouton2{
-  overflow: hidden;
-  margin-top: 10px;
-  text-align: right;
-  margin-right: 10px;
-  padding-right: 10px;
-  }
 
-  .bouton2 a{
-    background-color: red;
-    border: medium none;
-    border-radius: 20px;
-    color: #fff;
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    width: 100px;
-    text-align: center;
-    font-size: 1em;
-    }
-    
+
+
+
+  
