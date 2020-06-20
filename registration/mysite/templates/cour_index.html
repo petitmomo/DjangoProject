@@ -1,5 +1,44 @@
 {% extends "base.html" %} 
 {% block content %}
+<style>
+   .card .liens a{
+       display: inline-block;
+       margin: 3px;
+   }
+   .card .liens{
+       margin-left: 20px;
+   }
+   .card .liens a.detailbtn{
+    background-color: #1abc9c;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    padding-top: 8px;
+    font-size: 1em;
+   }
+   .card .liens a.editbtn{
+    background-color: rgba(255, 166, 0, 0.829);
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    padding-top: 8px;
+    font-size: 1em;
+   }
+   .card .liens a.deletebtn{
+    background-color: rgba(255, 0, 0, 0.712);
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    padding-top: 8px;
+    font-size: 1em;
+   }
+</style>
 <div class="container">
     <div class="blog">
         <div class="col-md-12">
@@ -7,16 +46,25 @@
                 {% for cour in blog_entries %}
                 <div class="col-md-6 ">
                     <div class="card mb-4">
-                        <a href="{% url 'cour-detail' cour.pk %}">
+                        <a href="{% url 'cour-detail' cour.pk %} " class="courdetail">
                             <img src="{{ cour.image.url }}" alt="img" class="courIcon">
                             <div class="card-body">
                                 <h1 class="card-title">{{ cour.title }}</h1>
                                 <p class="card-text">{{cour.slug }}</p>
                             </div>
                         </a>
-                        <div class="bouton">
-                            <a href="{% url 'cour-detail' cour.pk %}"> More</a>
-                        </div>
+                        <div class="liens">
+                        
+                                <a href="{% url 'cour-detail' cour.pk %}" class="detailbtn">Detail</a>
+                            
+                            
+                                <a href="{% url 'cour-update' cour.pk %}" class="editbtn"> Modifier</a>
+                           
+                            
+                                <a href="{% url 'cour-delete' cour.pk %}" class="deletebtn">Supprimer</a>
+                            
+                        </div> 
+                        
                     </div>
                 </div>
                 {% endfor %}
