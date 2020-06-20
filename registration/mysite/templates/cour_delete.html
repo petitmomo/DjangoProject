@@ -1,15 +1,7 @@
 {% extends "base.html" %} 
 
 {% block content %}
-<style>
-    h1,h3,strong{
-        color: #000;
-font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    h1{
-        margin-top: 30px;
-    }
-</style>
+
 <div class="container">
     <h1>Supprimer le cour</h1>
     <h3>Supprimer: {{cour.title}}</h3>
@@ -20,7 +12,8 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
         <strong>Vous étes sur de supprimer le cour?</strong>
         </br></br>
-        <button class="btn btn-primary btn-danger">Supprimer le cour</button>
+        <button class="btn btn-primary btn danger">Oui</button>
+        <a href="{% url 'cour-index' %}" class="annuler1">Non</a>
+    </div>
 </div>
- </div>
 {%endblock%}
