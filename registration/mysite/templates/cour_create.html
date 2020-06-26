@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+ {% block content %}
+ <style>
+     form i.fas{
+         margin: 5px;
+     }
+     form .btn-secondary{
+         background-color:rgb(0, 132, 255);
+     }
+     h1{
+        color: #000;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+     }
+ </style>
+    <div class="container">
+        <h1>Ajouter un cour</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form.as_p }}
+            </fieldset>
+            
+            <button class="btn btn-secondary"><i class="fas fa-edit"></i>Ajouter</button>
+            <a href="{% url 'cour-index' %}" class="annuler"><i class="fas fa-times-circle"></i>Annuler</a>
+        </form>
+    </div>
+{% endblock content %}
