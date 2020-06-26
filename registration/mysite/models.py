@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 STATUS = (
@@ -9,19 +10,20 @@ STATUS = (
 class Cour(models.Model):
     title = models.CharField(max_length=200)
     slug = models.TextField()
-    image = models.FileField(blank=True)
+    image = models.ImageField(blank=True, null=True, upload_to='images/')
     content = models.TextField()
-    updated_on = models.DateTimeField()
-    created_on = models.DateTimeField()
     status = models.IntegerField(choices=STATUS, default=0)
 
    
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('cour-index')
+
 class CourImage(models.Model):
     cour = models.ForeignKey(Cour, default=None, on_delete=models.CASCADE)
-    image = models.FileField(upload_to='images/')
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.cour.title
