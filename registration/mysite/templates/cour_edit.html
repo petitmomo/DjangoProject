@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
  {% block content %}
- 
+ <style>
+     form i.fas{
+         margin: 5px;
+     }
+ </style>
     <div class="container">
         <form method="POST">
             {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn btn-secondary">Modifier</button>
-            <a href="{% url 'cour-index' %}" class="annuler">Annuler</a>
+            <fieldsetc class="form-group">
+                {{form.as_p}}
+            </fieldset>
+                <button class="btn btn-secondary"><i class="fas fa-edit"></i>Modifier</button>
+                <a href="{% url 'cour-index' %}" class="annuler"><i class="fas fa-times-circle"></i>Annuler</a>
         </form>
     </div>
 {% endblock content %}
