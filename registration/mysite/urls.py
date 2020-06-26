@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
-from .views import CourList, CourDetail, CourUpdate, CourDelete
+from .import views
+from .views import CourList, CourDetail, CourUpdate, CourDelete, CourCreate
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -16,6 +16,6 @@ urlpatterns = [
     path('cour-detail/<int:pk>/', CourDetail.as_view(), name='cour-detail'),
     path('cour-update/<int:pk>/', CourUpdate.as_view(), name='cour-update'),
     path('cour-delete/<int:pk>/', CourDelete.as_view(), name='cour-delete'),
-
+    path('cour-create', CourCreate.as_view(), name='cour-create'),
 ]
 
