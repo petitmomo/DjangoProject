@@ -2,10 +2,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DeleteView, DetailView, UpdateView, CreateView
 from .models import Cour 
-from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.forms import modelformset_factory
+#from .forms import CourForm
+
+
 
 
 
@@ -78,17 +81,24 @@ class CourDetail(DetailView):
     model = Cour
     template_name = 'cour_detail.html'
 
-class CourUpdate(UpdateView):
-    model = Cour
-    template_name = 'cour_edit.html'
-    fields = ['title', 'slug', 'image', 'content']
-
 class CourDelete(DeleteView):
     model = Cour
     template_name = 'cour_delete.html'
     success_url = reverse_lazy('cour-index')
     
+class CourCreate(CreateView):
+    model = Cour
+    template_name = 'cour_create.html'
+    fields = ['title', 'slug', 'image', 'content']
+    success_url = reverse_lazy('cour-index')
 
+class CourUpdate(UpdateView):
+    model = Cour
+    template_name = 'cour_edit.html'
+    fields = ['title', 'slug', 'image', 'content']
+    success_url = reverse_lazy('cour-index')
+
+        
 
    
 
