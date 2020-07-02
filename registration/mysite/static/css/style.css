@@ -87,6 +87,15 @@ a.dropdown-toggle:hover, span.caret, span.userFullName {
 body.sidebar-collapse .sidebar {
   margin-left: -220px;
 }
+.app_owner_logo_container {
+ 
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
 
 body.sidebar-collapse #page-wrapper {
   margin-left: 0px;
