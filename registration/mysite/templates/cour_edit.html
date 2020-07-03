@@ -4,14 +4,25 @@
      form i.fas{
          margin: 5px;
      }
+     html body div.container form button.update-btn{
+    background-color: #ffc107;
+    height: 42px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 1em;
+}
  </style>
     <div class="container">
+        <h1>Modifier le cour</h1>
+        <h3>modifier: {{cour.title}}</h3>
+        <br>
         <form method="POST">
             {% csrf_token %}
-            <fieldsetc class="form-group">
+            <div class="form-group">
                 {{form.as_p}}
-            </fieldset>
-                <button class="btn btn-secondary"><i class="fas fa-edit"></i>Modifier</button>
+            </div>
+                <button  class="update-btn"><i class="fas fa-edit"></i>Modifier</button>
                 <a href="{% url 'cour-index' %}" class="annuler"><i class="fas fa-times-circle"></i>Annuler</a>
         </form>
     </div>

@@ -1,6 +1,18 @@
 {% extends "base.html" %} 
 
 {% block content %}
+<style>
+    form i.fas{
+        margin: 5px;
+    }
+    .confirm-btn{
+background-color: rgba(255, 0, 0, 0.671);  
+height: 43px;
+border-radius: 10px;
+color: white;
+border: none;
+}
+</style>
 
 <div class="container">
     <h1>Supprimer le cour</h1>
@@ -12,8 +24,8 @@
 
         <strong>Vous étes sur de supprimer le cour?</strong>
         </br></br>
-        <button class="btn btn-primary btn danger">Oui</button>
-        <a href="{% url 'cour-index' %}" class="annuler1">Non</a>
+        <button class="confirm-btn"><i class="fas fa-trash"></i>Oui</button>
+        <a href="{% url 'cour-index' %}" class="annuler1"><i class="fas fa-times-circle"></i>Non</a>
     </div>
 </div>
 {%endblock%}
