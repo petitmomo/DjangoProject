@@ -44,7 +44,7 @@ def index(request):
             return redirect('index')
 
     else:
-        return render(request, 'index.html')
+        return render(request, 'register.html')
 
 
 def login(request):

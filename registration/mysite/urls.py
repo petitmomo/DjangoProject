@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+
 urlpatterns = [
 
-    #path('home', views.home, name='home'),
+   
     path('index', views.index, name='index'),
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
@@ -17,5 +18,7 @@ urlpatterns = [
     path('cour-update/<int:pk>/', CourUpdate.as_view(), name='cour-update'),
     path('cour-delete/<int:pk>/', CourDelete.as_view(), name='cour-delete'),
     path('cour-create', CourCreate.as_view(), name='cour-create'),
+    
+    
 ]
 
