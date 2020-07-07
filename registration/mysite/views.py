@@ -6,7 +6,8 @@ from django.views.generic import ListView, DeleteView, DetailView, UpdateView, C
 from .models import Cour 
 from django.urls import reverse_lazy
 from django.forms import modelformset_factory
-#from .forms import CourForm
+
+
 
 
 
@@ -68,27 +69,22 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
-
-def password_reset(request):
-    return render(request, 'registration/password_reset.html')
-
-def password_reset_done(request):
-    return render(request, 'registration/password_reset_done.html')
-
 class CourList(ListView):
     model = Cour
     template_name = 'cour_index.html'
     context_object_name = 'blog_entries'
 
+
 class CourDetail(DetailView):
     model = Cour
     template_name = 'cour_detail.html'
+
 
 class CourDelete(DeleteView):
     model = Cour
     template_name = 'cour_delete.html'
     success_url = reverse_lazy('cour-index')
-    
+  
 class CourCreate(CreateView):
     model = Cour
     template_name = 'cour_create.html'
