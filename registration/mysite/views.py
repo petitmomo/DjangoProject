@@ -70,7 +70,10 @@ def logout(request):
 
 
 def password_reset(request):
-    return render(request, 'password_reset.html')
+    return render(request, 'registration/password_reset.html')
+
+def password_reset_done(request):
+    return render(request, 'registration/password_reset_done.html')
 
 class CourList(ListView):
     model = Cour
